@@ -76,7 +76,7 @@ int main() {
 		field.sumS = square();
 		field.sumC = circle();
 		for (int i = 0; i < day; i++) {
-			field_type = getchar();
+			scanf_s("%c ", &field_type);
 			sum = SUM(field_type, field.sumT, field.sumS, field.sumC, sum);
 		}
 		bunta.weight_after = calculation(bunta.height, bunta.weight_before,sum );
