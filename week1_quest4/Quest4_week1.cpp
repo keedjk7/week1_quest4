@@ -57,7 +57,10 @@ float BMI(float weight,float height) {
 int main() {
 	struct Bunta bunta;
 	struct field field;
-	scanf_s("%f%f", &bunta.height, &bunta.weight_before);
+	printf("Bunta Height Before Exercise : ");
+	scanf_s("%f", &bunta.height);
+	printf("Bunta Weight Before Exercise : ");
+	scanf_s("%f", &bunta.weight_before);
 	bunta.BMI_before=BMI(bunta.weight_before,bunta.height);
 
 	
@@ -69,13 +72,24 @@ int main() {
 		char field_type;
 		double sum=0;
 		//INPUT
+		printf("Input Day for Exercise : ");
 		scanf_s("%d", &day);
-		scanf_s("%lf%lf%lf%lf%lf",&T1,&T2,&S1,&S2,&CR);
+		printf("Height of Triangle Field : ");
+		scanf_s("%lf", &T1);
+		printf("Base of Triangle Field : ");
+		scanf_s("%lf", &T2);
+		printf("Height of Square : ");
+		scanf_s("%lf", &S1);
+		printf("Base of Square : ");
+		scanf_s("%lf", &S2);
+		printf("Radius of Circle : ");
+		scanf_s("%lf", &CR);
 
 		field.sumT = triangle();
 		field.sumS = square();
 		field.sumC = circle();
 		for (int i = 0; i < day; i++) {
+			printf("Day %d - Field Type : ", i + 1);
 			scanf_s("%c ", &field_type);
 			sum = SUM(field_type, field.sumT, field.sumS, field.sumC, sum);
 		}
